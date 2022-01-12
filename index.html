@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const selection = ["rock", "paper", "scissor"]
+        let playerScore = 0
+        let computerScore = 0
+        let gameContinue = true
+
+        function play(playerSelection, computerSelection){
+            console.log(playerSelection, computerSelection);
+            let result = ""
+            if (playerSelection === "rock"){
+                if (computerSelection === "rock"){
+                    result = "It is a tie! Both players choose Rock"
+                } else if (computerSelection === "paper"){
+                    result = "You lose! Paper beats Rock"
+                    computerScore += 1
+                } else {
+                    result = "You win! Rock beats Scissor" 
+                    playerScore += 1
+                }
+            } else if (playerSelection === "paper"){
+                if (computerSelection === "paper"){
+                    result = "It is a tie! Both players choose Paper"
+                } else if (computerSelection === "scissor"){
+                    result = "You lose! Scissor beats Paper"
+                    computerScore += 1
+                } else {
+                    result = "You win! Paper beats Rock" 
+                    playerScore += 1
+                }
+            } else {
+                if (computerSelection === "scissor"){
+                    result = "It is a tie! Both players choose Scissor"
+                } else if (computerSelection === "scissrockor"){
+                    result = "You lose! Rock beats Scissor"
+                    computerScore += 1
+                } else {
+                    result = "You win! Scissor beats Paper" 
+                    playerScore += 1
+                }
+            } 
+            result += `\nPlayer Score: ${playerScore}\nComputer Score: ${computerScore}`
+            return result
+        }
+
+        function game(){
+            while(gameContinue){
+                let computerPlay = () => selection[Math.floor(Math.random() * 3)]
+                let playerSelection = prompt("Enter Your Selection: ");
+                let computerSelection = computerPlay();
+                console.log(play(playerSelection.toLowerCase(), computerSelection))
+
+                if (computerScore === 5 || playerScore === 5){
+                    gameContinue = false
+                }
+            }
+
+            if (computerScore > playerScore){
+                return "You lose!"
+            } else if (computerScore < playerScore){
+                return "You win!"
+            } else {
+                return "It is a tie!"
+            }
+        }
+
+        console.log(game())
+
+    </script>
+    
+</body>
+</html>
