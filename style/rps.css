@@ -1,0 +1,107 @@
+body {
+    background-color: #fff;
+    background-image:
+            linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+            linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+    font-family: "Neucha", serif;
+
+}
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1{
+    font-size: 4vw;
+    margin-top: 20px;
+    margin-bottom: auto;
+}
+
+header h2{
+    font-size: 2vw;
+
+    margin-bottom: auto;
+}
+
+header h3{
+    font-size: 2.5vw;
+}
+
+.choice {
+    display: flex;
+    gap: 6vw;
+}
+
+button {
+    border-style: none;
+    background-color: transparent;
+}
+
+.choiceButton img{
+    width: 10vw;
+    height: auto;
+}
+
+.playerImage {
+    width: 13vw;
+    height: auto;
+}
+
+.game{
+    display: flex;
+    flex-direction: column;
+}
+.choice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weapon{
+    display: flex;
+    justify-content: space-between;
+    gap: 20vw;
+}
+
+.weapon img{
+    width: 7vw;
+    height: auto;
+}
+
+.player{
+    margin-top: 80px;
+    font-size: 3vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.human, .ai{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score h3{
+    font-size: 9vw;
+    margin: auto 5vw;
+    background-color: rgb(237, 147, 147);
+    border-radius: 20%;
+    width: 9vw;
+    height: 9vw;
+    text-align: center;
+}
+
+#blueBorder {
+    background-color: rgb(140, 171, 237) ;
+}
+
+.score{
+    display: flex;
+    gap: 5vw;
+    justify-content: center;
+
+    margin-top: auto;
+}
