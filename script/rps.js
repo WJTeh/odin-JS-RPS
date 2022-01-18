@@ -3,7 +3,7 @@ let playerScore = 0
 let computerScore = 0
 let gameContinue = true
 
-function play(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
     console.log(playerSelection, computerSelection);
     let result = ""
     if (playerSelection === "rock"){
@@ -43,10 +43,10 @@ function play(playerSelection, computerSelection){
 
 function game(){
     while(gameContinue){
+
         let computerPlay = () => selection[Math.floor(Math.random() * 3)]
-        let playerSelection = prompt("Enter Your Selection: ");
         let computerSelection = computerPlay();
-        console.log(play(playerSelection.toLowerCase(), computerSelection))
+        console.log(playRound(playerSelection.toLowerCase(), computerSelection))
 
         if (computerScore === 1 || playerScore === 1){
             gameContinue = false
@@ -62,4 +62,11 @@ function game(){
     }
 }
 
-console.log(game())
+//console.log(game())
+
+let rock = document.getElementById("rock");
+console.log(rock)
+rock.addEventListener("click", ()=>{
+    let playerSelection = "rock";
+})
+

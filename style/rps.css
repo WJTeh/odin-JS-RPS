@@ -41,9 +41,34 @@ button {
 }
 
 .choiceButton img{
-    width: 10vw;
+    width: 7vw;
     height: auto;
+    border: 5px dashed red;
+    border-radius: 50%;
+    padding: 20px;
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .playerImage {
     width: 13vw;
@@ -67,8 +92,8 @@ button {
 }
 
 .weapon img{
-    width: 7vw;
-    height: auto;
+    width:12vw;
+    height: 12vw;
 }
 
 .player{

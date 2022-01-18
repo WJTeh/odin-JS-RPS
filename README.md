@@ -1,4 +1,4 @@
-# odin-JS-RPS
+# odin-JS-RPS   
 The Odin Project 1st JavaScript project (Rock-Paper-Scissor)
 
 Set up a new branch on your previous Rock Paper Scissors repo
@@ -24,4 +24,12 @@ Now let’s take a look at how we can merge these changes back to our main branc
     Let’s push our main branch into our remote repo by running git push origin main . Go to your Github repo and you’ll see that our main branch will have all the changes and commits you made to the rps-ui branch. Congratulations! You’ve successfully pushed your first feature into your production branch!
     Now that we have all our code in the main branch, we don’t really need our rps-ui branch anymore. Let’s do some cleanup, both locally and in the remote repo. Delete the branch from our local repo with git branch -d rps-ui and also delete it from the remote repo on Github with git push --delete origin rps-ui. Congrats, we’re all done with our cleanup!
 
+startGame()     #start the game?
+playRound()     #determine winner of current round
+getRandomChoice()      #choose weapon for ai randomly
+handleClick()       #handle event when clicking choice
+checkGameCont()       #check whether there are winner
+updateChoice()      #update choice for player and ai
+updateScore()        #update score for player and ai
+~~updateRoundMsg()    #update current math message (win/lose/tie)~~
 
