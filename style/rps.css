@@ -15,24 +15,24 @@ header{
 }
 
 header h1{
-    font-size: 4vw;
+    font-size: 2vw;
     margin-top: 20px;
     margin-bottom: auto;
 }
 
 header h2{
-    font-size: 2vw;
+    font-size: 1vw;
 
     margin-bottom: auto;
 }
 
 header h3{
-    font-size: 2.5vw;
+    font-size: 1.25vw;
 }
 
 .choice {
     display: flex;
-    gap: 6vw;
+    gap: 3vw;
 }
 
 button {
@@ -40,38 +40,27 @@ button {
     background-color: transparent;
 }
 
-.choiceButton img{
-    width: 7vw;
+.choiceButton{
+    width: 3.5vw;
     height: auto;
-    border: 5px dashed red;
+    border: 10px solid transparent;
     border-radius: 50%;
-    padding: 20px;
+    padding: 15px;
 
+
+    background-clip: content-box;
+    transition: transform 0.5s ease, border 0.5s ease;
+}
+
+.choiceButton:hover {
+    border: 4px solid rgb(62, 115, 181);
+    transform: scale(1.3);
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .playerImage {
-    width: 13vw;
+    width: 6.5vw;
     height: auto;
 }
 
@@ -88,17 +77,28 @@ button {
 .weapon{
     display: flex;
     justify-content: space-between;
-    gap: 20vw;
+    gap: 10vw;
 }
 
 .weapon img{
-    width:12vw;
-    height: 12vw;
+    width:6vw;
+    height: 6vw;
+}
+
+
+.round {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    font-size: 2vw;
+    margin: 1vw;
+
 }
 
 .player{
-    margin-top: 80px;
-    font-size: 3vw;
+    font-size: 1.5vw;
     display: flex;
     justify-content: space-evenly;
 }
@@ -110,12 +110,12 @@ button {
 }
 
 .score h3{
-    font-size: 9vw;
-    margin: auto 5vw;
+    font-size: 4.5vw;
+    margin: auto 2.5vw;
     background-color: rgb(237, 147, 147);
     border-radius: 20%;
-    width: 9vw;
-    height: 9vw;
+    width: 4.5vw;
+    height: 4.5vw;
     text-align: center;
 }
 
@@ -125,8 +125,44 @@ button {
 
 .score{
     display: flex;
-    gap: 5vw;
+    gap: 2.5vw;
     justify-content: center;
 
     margin-top: auto;
 }
+
+#roundMsg{
+    margin-top: 5vw;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.endGameModel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw
+}
+
+#endMsg{
+    font-size: 5vw;
+}
+
+.restartBtnCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restartBtnCont button{
+    border: 4px solid lightseagreen;
+    font-size: 2vw;
+}
+
+.restartBtn{
+    visibility: hidden;
+}
+

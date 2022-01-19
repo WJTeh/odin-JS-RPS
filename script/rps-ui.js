@@ -1,9 +1,10 @@
 
 const weaponChoice = ["rock", "paper", "scissor"]
+
 let playerScore = 0
 let computerScore = 0
 let roundWinner = ""
-let statusMsg = ""
+let roundMsg = ""
 let gameContinue = true
 let gameWinner = ""
 let roundNum = 0
@@ -12,11 +13,13 @@ let roundNum = 0
 const rockClick = document.getElementById("rock")
 const paperClick = document.getElementById("paper")
 const scissorClick = document.getElementById("scissor")
+const restartClick = document.getElementById("restartBtn")
 
 
 rockClick.addEventListener("click", ()=> handleClick("rock"))
 paperClick.addEventListener("click", ()=> handleClick("paper"))
 scissorClick.addEventListener("click", ()=> handleClick("scissor"))
+restartClick.addEventListener("click", ()=> restartGame())
 
 
 
@@ -44,12 +47,14 @@ function playRound(playerSelection, computerSelection){
 function updateScore(roundWinner, playerSelection, computerSelection){
     if (roundWinner === "player"){
         playerScore += 1
-        statusMsg = `You win. ${playerSelection} beat ${computerSelection}`
+        document.getElementById("blueBorder").textContent = playerScore
+        roundMsg = `You win.\n ${playerSelection} beat ${computerSelection}`
     } else if (roundWinner === "computer"){
         computerScore += 1
-        statusMsg = `You lose. ${computerSelection} beat ${playerSelection}`
+        roundMsg = `You lose.\n ${computerSelection} beat ${playerSelection}`
+        document.getElementById("redBorder").textContent = computerScore
     } else {
-        statusMsg = `Both choose ${playerSelection}. It is a tie`
+        roundMsg = `It is a tie. \nBoth choose ${playerSelection}. `
     }
 }
 
@@ -110,6 +115,11 @@ function checkGameCont(){
     }
 }
 
+function displayRoundMsg(roundMsg){
+    document.getElementById("roundMsg").textContent = roundMsg
+}
+
+
 function endMessage(){
     if (gameWinner ==="player"){
         return "You win!"
@@ -119,9 +129,11 @@ function endMessage(){
 }
 
 function handleClick(playerSelection){
+
     if (gameContinue){
         roundNum += 1
-        console.log(roundNum)
+        document.getElementById("roundNum").textContent = roundNum
+
         let computerSelection = getRandomChoice()
 
         updateChoice(playerSelection, computerSelection)
@@ -130,13 +142,38 @@ function handleClick(playerSelection){
         }
         roundWinner = playRound(playerSelection, computerSelection)
         updateScore(roundWinner, playerSelection, computerSelection)
-        console.log(`${statusMsg}\nPlayer Score: ${playerScore}\nComputer Score: ${computerScore}`)
+        displayRoundMsg(roundMsg)
         checkGameCont()
-    } else{
-        alert(endMessage())
+        generateEndMsg(gameWinner)
+
+    }
+
+
+}
+
+function generateEndMsg(gameWinner){
+    let endMsgCont = document.querySelector("#endMsg")
+    if (gameWinner === "player"){
+        console.log("player win")
+        const endMsg = document.createTextNode("You win this game :)");
+        endMsgCont.append(endMsg)
+
+        let msg = document.querySelector(".restartBtn")
+        msg.classList.remove("restartBtn")
+
+
+    } else if(gameWinner=== "computer"){
+        console.log("robot win")
+        const endMsg = document.createTextNode("You lose this game :(");
+        endMsgCont.append(endMsg)
+
+        let msg = document.querySelector(".restartBtn")
+        msg.classList.remove("restartBtn")
     }
 }
 
+function restartGame(){
 
+    location.reload()
 
-
+}

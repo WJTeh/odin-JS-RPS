@@ -33,3 +33,10 @@ updateChoice()      #update choice for player and ai
 updateScore()        #update score for player and ai
 ~~updateRoundMsg()    #update current math message (win/lose/tie)~~
 
+
+~~add round number~~
+~~add round message (you win xx beat xx)~~
+~~end message~~ 
+restart game
+
+

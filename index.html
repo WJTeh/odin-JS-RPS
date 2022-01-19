@@ -19,9 +19,13 @@
 
     <div class="game">
         <div class="choice">
-            <button id="rock" type="button" class="choiceButton"><img src = "picture/knock.png"/></button>
-            <button id="paper" type="button" class="choiceButton"><img src = "picture/hand.png"/></button>
-            <button id="scissor" type="button" class="choiceButton"><img src = "picture/two-fingers.png"/></button>
+            <button id="rock" type="button"><img class="choiceButton" src="picture/knock.png"/></button>
+            <button id="paper" type="button"><img class="choiceButton" src="picture/hand.png"/></button>
+            <button id="scissor" type="button"><img  class="choiceButton" src="picture/two-fingers.png"/></button>
+        </div>
+
+        <div class="round">
+            Round<span id="roundNum">0</span>
         </div>
 
         <div class="player">
@@ -31,7 +35,6 @@
             </div>
 
             <div class="weapon" id="weapon">
-
             </div>
 
             <div class="ai">
@@ -42,8 +45,16 @@
         </div>
         <div class="score">
             <h3 id="blueBorder">0</h3>
-            <h3>0</h3>
+            <h3 id="redBorder">0</h3>
         </div>
+        <div class="endGameModel">
+            <div id="roundMsg"></div>
+            <div id="endMsg"></div>
+            <div class="restartBtnCont">
+                <button id ="restartBtn" class="restartBtn" type="button">Play Again?</button>
+            </div>
+        </div>
+
 
 
     </div>
